@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Shiri 💌</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #ffe6f0, #fffafc);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+    }
+
+    /* Envelope Page */
+    .envelope {
+      width: 300px;
+      height: 200px;
+      background: #ffccd5;
+      position: relative;
+      border-radius: 8px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+    .envelope::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-bottom: 100px solid #ffb3c1;
+    }
+    .envelope::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 100px solid #ffa6b9;
+    }
+    .envelope h1 {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.3em;
+      color: white;
+      z-index: 2;
+    }
+    .open-btn {
+      position: absolute;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 25px;
+      background: #e75480;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    .open-btn:hover {
+      background: #d94470;
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    /* Letter Page */
+    .letter {
+      display: none;
+      background: #fffdfd;
+      border: 8px solid #ffd6e8;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 650px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      text-align: left;
+      animation: fadeIn 1.2s ease;
+      position: relative;
+      z-index: 1;
+      background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+      background-size: cover;
+    }
+    .letter::before {
+      content: "🌸";
+      font-size: 28px;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+    .letter::after {
+      content: "🌸";
+      font-size: 28px;
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+    }
+    h2 {
+      color: #e75480;
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.15em;
+      line-height: 1.7;
+      color: #444;
+    }
+    .signature {
+      text-align: right;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #e75480;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Floating hearts and flowers */
+    .floating {
+      position: fixed;
+      bottom: -50px;
+      font-size: 24px;
+      animation: floatUp linear forwards;
+      z-index: 0;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) scale(0.8) rotate(0deg);
+        opacity: 0.9;
+      }
+      to {
+        transform: translateY(-110vh) scale(1.2) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Envelope -->
+  <div class="envelope" id="envelope">
+    <h1>💌 For My Shiri</h1>
+    <button class="open-btn" onclick="openLetter()">Open Letter</button>
+  </div>
+
+  <!-- Letter -->
+  <div class="letter" id="letter">
+    <h2>My Love ❤️</h2>
+    <p>
+      Gusto ko lang ipaalala sa’yo kung gaano kita kamahal at kung gaano ako humahanga sa’yo. Alam kong medyo mabigat yung pinagdadaanan mo ngayon kasabay ng review mo para sa board exam, lagi ka pang nasa tabi ni Daddy mo para samahan siya sa hospital at sa therapy sessions niya. Hindi madali ang ginagawa mo, pero nakikita ko kung gaano ka kalakas, gaano ka matatag, at kung gaano kalaki yung puso mo para sa pamilya mo.  
+    </p>
+    <p>
+      Sobrang nakaka inspire ka, love. ❤️ Hindi lang dahil independent at responsible ka, pero dahil kaya mong ipagsabay yung mga bagay na alam kong nakakapagod na. Kahit pagod ka, pinipili mo pa ring maging matatag para sa mga mahal mo. And that’s one of the million reasons why I love you so much.
+    </p>
+    <p>
+      Gusto ko lang malaman mo na hindi ka nag iisa. Kahit mahirap ang mga araw na dumarating, andito lang ako palagi handa kang alalayan at damayan. Kapag pagod ka na, pwede mong ikwento sakin mga hinaing mo sa buhay makikinig ako para kahit papano mabawas bawasan ang bigat.
+      Sobrang na aamaze ako sayo. Ikaw ang pinakamalakas at pinakamagandang babae na kilala ko, inside and out. Lagi mong tandaan, love, na habang inaalagaan mo ang pamilya mo at lumalaban para sa pangarap mo, nandito lang ako.  
+    </p>
+    <p class="signature">- Paul</p>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById("envelope").style.display = "none";
+      document.getElementById("letter").style.display = "block";
+      startFloatingEmojis();
+    }
+
+    function startFloatingEmojis() {
+      const emojis = ["❤️", "🌸", "🌹", "💖"];
+      setInterval(() => {
+        const emoji = document.createElement("div");
+        emoji.className = "floating";
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + "vw";
+        emoji.style.animationDuration = 5 + Math.random() * 4 + "s";
+        emoji.style.fontSize = 20 + Math.random() * 25 + "px";
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 8000);
+      }, 100);
+    }
+  </script>
+
+</body>
+</html>
